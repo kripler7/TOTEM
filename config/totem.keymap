@@ -11,10 +11,12 @@
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
        
 
+#include <dt-bindings/zmk/mouse.h>
+#include <input/processors.dtsi>
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/pointing.h>
 
 #define BASE 0
 #define NAV  1
@@ -23,41 +25,133 @@
 #define TVP1 4
 #define TVP2 5
 
+/*
+
+   &mmv_input_listener {
+       input-processors = <&zip_xy_scaler 2 1>;
+   };
+
+   &msc_input_listener {
+       input-processors = <&zip_xy_scaler 2 1>;
+   };
+
+ */
+
+#define ZMK_MOUSE_DEFAULT_MOVE_VAL 1200  // 600
+#define ZMK_MOUSE_DEFAULT_SCRL_VAL 20    // 10
+
 &mt {
-  quick-tap-ms = <100>;
-  global-quick-tap;
-  flavor = "tap-preferred";
-  tapping-term-ms = <170>;
+    tapping-term-ms = <200>;
+    quick-tap-ms = <175>;
+    flavor = "balanced";
+    hold-trigger-key-positions = <16 17 18 13 12 11 20>;
+    hold-trigger-on-release;
+};
+
+&mmv {
+};
+
+&msc {
+};
+
+&lt {
 };
 
 / {
-     combos {
-            compatible = "zmk,combos";
-            combo_esc {
-                timeout-ms = <50>;
-                key-positions = <0 1>;
-                bindings = <&kp ESC>;
-            };
-            combo_tvp {
-                timeout-ms = <100>;
-                key-positions = <11 12 13>;
-                bindings = <&tog TVP1>;
-            };
+    behaviors {
+        mmv {
+            acceleration-exponent = <1>;      // 1
+            time-to-max-speed-ms = <900>;    // 40
+            delay-ms = <0>;                   // 0
+        };
+
+        msc {
+            acceleration-exponent = <1>;      // 0
+            time-to-max-speed-ms = <400>;      // 500
+            delay-ms = <0>;                   //   10
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        a {
+            bindings = <&mt GRAVE ESCAPE>;
+            key-positions = <0 1>;
+        };
+
+        b {
+            bindings = <&kp CLCK>;
+            key-positions = <10 11 12>;
+        };
+
+        d {
+            bindings = <&kp DEL>;
+            key-positions = <8 9>;
+        };
+
+        e {
+            bindings = <&kp ENTER>;
+            key-positions = <18 17>;
+        };
+
+        h {
+            bindings = <&sys_reset>;
+            key-positions = <1 12 13 24>;
+        };
+
+        j {
+            bindings = <&sys_reset>;
+            key-positions = <17 8 16 25>;
+        };
+
+        Backslash_pipe {
+            bindings = <&mt PIPE BACKSLASH>;
+            key-positions = <29 28>;
+        };
+
+        print_screen {
+            bindings = <&screenshot>;
+            key-positions = <20 21 22>;
+        };
+
+        num_layer {
+            bindings = <&to 3>;
+            key-positions = <6 7 5>;
+        };
+
+        bt_layer {
+            bindings = <&to 6>;
+            key-positions = <4 3 2>;
+        };
+
+        default_layer {
+            bindings = <&to 0>;
+            key-positions = <15 16 17 18>;
+        };
+
+        f_layer {
+            bindings = <&to 5>;
+            key-positions = <14 13 12 11>;
+        };
     };
 
     macros {
-        gif: gif {
-            label = "giphy";
+        screenshot: screenshot {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LSHFT>
-                , <&macro_tap &kp N2>
-                , <&macro_release &kp LSHFT>
-                , <&macro_tap &kp G &kp I &kp F>
-                ;
+            bindings =
+                <&macro_press>,
+                <&kp LS(LEFT_GUI)>,
+                <&macro_tap>,
+                <&kp S>,
+                <&macro_release>,
+                <&kp LS(LEFT_GUI)>;
+
+            label = "SCREENSHOT";
         };
     };
+
 
         keymap {
                 compatible = "zmk,keymap";

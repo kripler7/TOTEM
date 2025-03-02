@@ -199,10 +199,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-        &kp ESC    &bt BT_CLR  &kp UP    &kp EQUAL  &kp LBRC    &kp RBRC  &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_PLUS
-        &kp LSHFT  &kp LEFT    &kp DOWN  &kp RIGHT  &kp LBKT    &kp RBKT  &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_MINUS
-&trans  &kp DEL    &kp PG_UP   &kp CAPS  &kp PG_DN  &kp LPAR    &kp RPAR  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_MULTIPLY  &trans
-                               &trans    &trans     &trans      &mo ADJ   &kp KP_N0  &trans
+        &mt EXCL NUMBER_1            &mt AT_SIGN NUMBER_2           &mt HASH NUMBER_3  &mt DOLLAR NUMBER_4  &mt PERCENT N5    &mt CARET NUMBER_6  &mt AMPERSAND N7  &mt ASTERISK N8  &mt LEFT_PARENTHESIS N9  &mt RIGHT_PARENTHESIS NUMBER_0
+        &mt UNDER MINUS              &mt PLUS EQUAL                 &trans             &trans               &trans            &kp RBKT            &kp KP_N4         &kp KP_N5        &kp KP_N6                &kp KP_MINUS
+&trans  &mt LEFT_BRACE LEFT_BRACKET  &mt RIGHT_BRACE RIGHT_BRACKET  &trans             &trans               &trans            &kp RPAR            &kp KP_N1         &kp KP_N2        &kp KP_N3                &kp KP_MULTIPLY                 &trans
+                                                                    &trans             &trans               &trans            &mo ADJ             &kp KP_N0         &trans
             >;
         };
 

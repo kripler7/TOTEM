@@ -133,6 +133,11 @@
             bindings = <&to 5>;
             key-positions = <14 13 12 11>;
         };
+
+        colemak_dh {
+            bindings = <&to 7>;
+            key-positions = <36 37 35 30>;
+        };
     };
 
     macros {
@@ -323,10 +328,10 @@
 
         colemak_dh {
             bindings = <
-        &kp Q  &kp W  &kp F   &kp P   &kp B     &kp J   &kp L   &kp U      &kp Y    &kp SEMI
-        &kp A  &kp R  &kp S   &kp T   &kp G     &kp M   &kp N   &kp E      &kp I    &kp O
-&trans  &kp Z  &kp X  &kp C   &kp D   &kp V     &kp K   &kp H   &kp COMMA  &kp DOT  &kp FSLH  &trans
-                      &trans  &trans  &trans    &trans  &trans  &trans
+       &kp Q           &kp W             &kp F        &kp P           &kp B          &kp J        &kp L            &kp U            &kp Y              &mt COLON SEMI
+       &kp A           &mt LEFT_SHIFT R  &mt LCTRL D  &mt LEFT_ALT T  &kp G          &kp M        &mt RIGHT_ALT N  &mt RCTRL E      &mt RIGHT_SHIFT I  &kp O
+&mo 3  &mt LEFT_WIN Z  &kp X             &kp C        &kp D           &kp V          &kp K        &kp H            &kp COMMA        &kp DOT            &mt QUESTION SLASH  &mt RS(APOS) APOS
+                                         &kp LG(TAB)  &lt 4 TAB       &lt 1 SPACE    &lt 2 SPACE  &kp BACKSPACE    &mt LC(V) LC(C)
             >;
 
             label = "colemak_dh";

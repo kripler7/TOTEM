@@ -70,6 +70,7 @@
         a {
             bindings = <&mt GRAVE ESCAPE>;
             key-positions = <0 1>;
+            layers = <0 1 4>;
         };
 
         b {
@@ -130,6 +131,12 @@
         colemak_dh {
             bindings = <&tog 1>;
             key-positions = <36 37 35 30>;
+        };
+
+        grave {
+            bindings = <&mt LS(GRAVE) GRAVE>;
+            key-positions = <0 1>;
+            layers = <2 3>;
         };
     };
 

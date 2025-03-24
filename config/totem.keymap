@@ -119,7 +119,7 @@
         };
 
         default_layer {
-            bindings = <&to 1>;
+            bindings = <&to 0>;
             key-positions = <15 16 17 18>;
         };
 
@@ -129,7 +129,7 @@
         };
 
         colemak_dh {
-            bindings = <&tog 0>;
+            bindings = <&tog 1>;
             key-positions = <30 19>;
         };
 

@@ -70,7 +70,7 @@
         a {
             bindings = <&mt GRAVE ESCAPE>;
             key-positions = <0 1>;
-            layers = <1 0 4>;
+            layers = <1 0 3>;
         };
 
         b {
@@ -109,12 +109,12 @@
         };
 
         num_layer {
-            bindings = <&to 4>;
+            bindings = <&to 3>;
             key-positions = <6 7 5>;
         };
 
         bt_layer {
-            bindings = <&to 7>;
+            bindings = <&to 6>;
             key-positions = <4 3 2>;
         };
 
@@ -124,7 +124,7 @@
         };
 
         f_layer {
-            bindings = <&to 6>;
+            bindings = <&to 5>;
             key-positions = <14 13 12 11>;
         };
 
@@ -136,7 +136,7 @@
         grave {
             bindings = <&mt LS(GRAVE) GRAVE>;
             key-positions = <0 1>;
-            layers = <2 3>;
+            layers = <2>;
         };
     };
 
@@ -165,8 +165,8 @@
             bindings = <
        &kp Q           &kp W             &kp F          &kp P           &kp B          &kp J        &kp L            &kp U            &kp Y              &mt COLON SEMI
        &kp A           &mt LEFT_SHIFT R  &mt LCTRL S    &mt LEFT_ALT T  &kp G          &kp M        &mt RIGHT_ALT N  &mt RCTRL E      &mt RIGHT_SHIFT I  &kp O
-&mo 4  &mt LEFT_WIN Z  &kp X             &kp C          &kp D           &kp V          &kp K        &kp H            &kp COMMA        &kp DOT            &mt QUESTION SLASH  &mt RS(APOS) APOS
-                                         &lt 4 LG(TAB)  &lt 5 TAB       &lt 2 SPACE    &lt 3 SPACE  &kp BACKSPACE    &mt LC(V) LC(C)
+&mo 3  &mt LEFT_WIN Z  &kp X             &kp C          &kp D           &kp V          &kp K        &kp H            &kp COMMA        &kp DOT            &mt QUESTION SLASH  &mt RS(APOS) APOS
+                                         &lt 3 LG(TAB)  &lt 4 TAB       &lt 2 SPACE    &lt 2 SPACE  &kp BACKSPACE    &mt LC(V) LC(C)
             >;
 
             label = "colemak_dh";
@@ -191,8 +191,8 @@
             bindings = <
        &kp Q           &kp W             &kp E        &kp R           &kp T          &kp Y        &kp U            &kp I            &kp O              &kp P
        &kp A           &mt LEFT_SHIFT S  &mt LCTRL D  &mt LEFT_ALT F  &kp G          &kp H        &mt RIGHT_ALT J  &mt RCTRL K      &mt RIGHT_SHIFT L  &mt COLON SEMI
-&mo 4  &mt LEFT_GUI Z  &kp X             &kp C        &kp V           &kp B          &kp N        &kp M            &kp COMMA        &kp DOT            &mt QUESTION SLASH  &mt RS(APOS) APOS
-                                         &kp LG(TAB)  &lt 5 TAB       &lt 2 SPACE    &lt 3 SPACE  &kp BACKSPACE    &mt LC(V) LC(C)
+&mo 3  &mt LEFT_GUI Z  &kp X             &kp C        &kp V           &kp B          &kp N        &kp M            &kp COMMA        &kp DOT            &mt QUESTION SLASH  &mt RS(APOS) APOS
+                                         &kp LG(TAB)  &lt 4 TAB       &lt 2 SPACE    &lt 0 SPACE  &kp BACKSPACE    &mt LC(V) LC(C)
             >;
         };
 
@@ -210,30 +210,6 @@
             // ┃           ┃           ┃   P UP    ┃  C LOCK   ┃  P DOWN   ┃     (     ┃   ┃     )     ┃     1     ┃     2     ┃     3     ┃     *     ┃           ┃
             // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
             //                                     ┃           ┃    TAB    ┃    SPC    ┃   ┃    DEL    ┃     0     ┃           ┃
-            //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
-
-            bindings = <
-        &mt EXCL NUMBER_1            &mt AT_SIGN NUMBER_2           &mt HASH NUMBER_3  &mt DOLLAR NUMBER_4  &mt PERCENT N5    &mt CARET NUMBER_6  &mt AMPERSAND N7  &mt ASTERISK N8  &mt LEFT_PARENTHESIS N9  &mt RIGHT_PARENTHESIS NUMBER_0
-        &mt UNDER MINUS              &mt PLUS EQUAL                 &trans             &trans               &trans            &trans              &kp PG_UP         &kp UP_ARROW     &kp PAGE_DOWN            &mt DOUBLE_QUOTES SQT
-&trans  &mt LEFT_BRACE LEFT_BRACKET  &mt RIGHT_BRACE RIGHT_BRACKET  &trans             &trans               &trans            &kp HOME            &kp LEFT          &kp DOWN         &kp RIGHT                &kp END                         &trans
-                                                                    &trans             &trans               &trans            &none               &none             &trans
-            >;
-        };
-
-        arrow_numbers2 {
-            // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-
-            label = "ARROW_NUMBERS2";
-
-            // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-            //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
-            //             ┃     !     ┃     @     ┃     #     ┃     $     ┃     %     ┃   ┃     ˆ     ┃     &     ┃     Ü     ┃     '     ┃     "     ┃
-            //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-            //             ┃     Ä     ┃           ┃    SZ     ┃           ┃           ┃   ┃   MUTE    ┃   YEN     ┃   EURO    ┃  POUND    ┃     Ö     ┃
-            // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-            // ┃           ┃  EMAIL1   ┃  EMAIL2   ┃           ┃           ┃           ┃   ┃   VOL-    ┃   VOL+    ┃   LAST    ┃   NEXT    ┃     \     ┃           ┃
-            // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
-            //                                     ┃           ┃    GIF    ┃    ADJ    ┃   ┃           ┃           ┃           ┃
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
@@ -286,8 +262,8 @@
 
             bindings = <
        &none           &kp C_AC_BACK  &kp C_AC_REFRESH  &kp C_AC_FORWARD  &none             &none         &none           &mmv MOVE_UP    &none            &none
-       &kp LCTRL       &mkp LCLK      &mkp MCLK         &mkp RCLK         &msc SCRL_UP      &none         &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none
-&none  &kp LEFT_SHIFT  &none          &msc SCRL_LEFT    &msc SCRL_RIGHT   &msc SCRL_DOWN    &none         &none           &none           &none            &none  &none
+       &kp LCTRL       &mkp LCLK      &mkp MCLK         &mkp RCLK         &msc SCRL_UP      &none         &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp RCTRL
+&none  &kp LEFT_SHIFT  &none          &msc SCRL_LEFT    &msc SCRL_RIGHT   &msc SCRL_DOWN    &none         &none           &none           &none            &kp RIGHT_SHIFT  &none
                                       &none             &none             &none             &kp C_VOL_DN  &kp C_VOL_UP    &kp K_MUTE
             >;
         };
